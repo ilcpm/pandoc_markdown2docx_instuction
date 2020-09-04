@@ -44,7 +44,7 @@ eqnos-number-by-section: True
 
 ## 二级标题
 
-如果本文可能对你身边的亲友有帮助，也欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。
+如果本文可能对你身边的亲友有帮助，也 \t 欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。
 
 作者：王树义
 链接：https://www.jianshu.com/p/b0ac7ae98100
@@ -54,7 +54,10 @@ eqnos-number-by-section: True
 
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
-Term 1
+dfdf123
+  ~ 123
+
+❗❌Term 1
   ~ Definition 1
 
 Term 2
@@ -63,7 +66,24 @@ Term 2
 
 ### 三级标题
 
-* here is my first
+```
+1   
+23
+23
+```
+
+123[1]
+
+[1]: 123
+
+> [before:]
+> 
+> 123
+
+
+[before:] : 123
+
+* here is my first   
   list item.
 * and my second.
 
@@ -96,6 +116,14 @@ Term 2
 
 ---
 
+<div id="fig:figureRef">
+![subfigure 1 caption](QQ截图20200420030952.jpg){#fig:figureRefA}
+
+![subfigure 2 caption](QQ截图20200420030952.jpg){#fig:figureRefB}
+
+Caption of figure
+</div>
+
 + A lazy, lazy, list
 item.
 
@@ -114,18 +142,29 @@ list item.
       ii. subtwo
      iii. subthree
 
+|   1   |    2    |
+| :---: | :-----: |
+| * 123 |  * 123  |
+|       | 1. 123  |
+|       | 2. 456  |
+|       | (@) 123 |
+|       | (@) 123 |
+
 
 (2) Two
 (5) Three
 1.  Four
 *   Five
 
+
 - [ ] an unchecked task list item
 - [x] checked item
 
 ---
 
-(@)  My first example will be numbered (5).
+123(@good)
+
+(#)  My first example will be numbered (5).
 (@)  My second example will be numbered (2).
 
 Explanation of examples.
@@ -142,7 +181,7 @@ As (@good) illustrates, ...
 
 ![宽度5厘米的图片](QQ截图20200420030952.jpg){#fig:pic_test width=5cm}
 
-如果本文可能对你身边的亲友有帮助，也欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。
+如果本文可能对你身边的 {#eq} 亲友有帮助，也欢迎你把本文通过微博或朋友圈分享给他们。让他们一起参与到我们的讨论中来。
 
 $$ \begin{aligned} P\left(\left|\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}\right| \leq \frac{u-\mu}{\sigma / \sqrt{n}}\right) &=P(\sqrt{3 n}|\bar{X}| \leq \sqrt{3 n} * u) \\&= P(-\sqrt{3 n} * u \leq \sqrt{3 n} \bar{X} \leq \sqrt{3 n} * u) \\&= \Phi(\sqrt{3 n} * u)-\Phi(-\sqrt{3 n} * u) \\&= \Phi(\sqrt{3 n} * u)-(1-\Phi(\sqrt{3 n} * u)) \\&= 2 \Phi(\sqrt{3 n} * u)-1 \end{aligned} $$
 
@@ -160,7 +199,8 @@ $$ \begin{aligned} P\left(\left|\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}\right| \le
 
 ![宽度6厘米](QQ截图20200420030952.jpg){#fig:pic width=6cm}
 
-asd{@eq:id}fafd @fig:pic_test{nolink=True}ad $E(x)=\frac{a+b}{2}=0, D(x)=\frac{(b-a)^{2}}{12}=\frac{1}{3}$  ，则：$$ \begin{aligned} P\left(\left|\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}\right| \leq \frac{u-\mu}{\sigma / \sqrt{n}}\right) &=P(\sqrt{3 n}|\bar{X}| \leq \sqrt{3 n} * u) \\&= P(-\sqrt{3 n} * u \leq \sqrt{3 n} \bar{X} \leq \sqrt{3 n} * u) \\&= \Phi(\sqrt{3 n} * u)-\Phi(-\sqrt{3 n} * u) \\&= \Phi(\sqrt{3 n} * u)-(1-\Phi(\sqrt{3 n} * u)) \\&= 2 \Phi(\sqrt{3 n} * u)-1 \end{aligned} $${#eq:id}   
+asd{!eq:id}fafd {@fig:pic}{nolink=True}ad $E(x)=\frac{a+b}{2}=0, D(x)=\frac{(b-a)^{2}}{12}=\frac{1}{3}$  ，则：$$ \begin{aligned} P\left(\left|\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}\right| \leq \frac{u-\mu}{\sigma / \sqrt{n}}\right) &=P(\sqrt{3 n}|\bar{X}| \leq \sqrt{3 n} * u) \\&= P(-\sqrt{3 n} * u \leq \sqrt{3 n} \bar{X} \leq \sqrt{3 n} * u) \\&= \Phi(\sqrt{3 n} * u)-\Phi(-\sqrt{3 n} * u) \\&= \Phi(\sqrt{3 n} * u)-(1-\Phi(\sqrt{3 n} * u)) \\&= 2 \Phi(\sqrt{3 n} * u)-1 \end{aligned} $${#eq:id}
+
 112313123123 $x+y \sin x \cos y^\varepsilon$
 
 afdafda [@XuRhee-162]

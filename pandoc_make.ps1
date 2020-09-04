@@ -1,20 +1,22 @@
 $isOpenDocxAfterComplete = 1
 
-$in = "example.md"
+$in = "menu.md"
 $out = $in.Split('.')[0] + ".docx"
-$refer = "reference.docx"
+$refer = "menu.docx"
 $toc_depth = 3
 
 pandoc.exe `
     $in `
     -o $out `
+    --metadata link-citations=true `
     --from markdown+startnum+footnotes `
     --toc-depth=$toc_depth `
-    --filter pandoc-fignos `
-    --filter pandoc-eqnos `
-    --filter pandoc-secnos `
     --filter pandoc-citeproc `
-    --reference-doc=$refer
+    # --reference-doc=$refer
+    # --filter pandoc-crossref `
+    # --filter pandoc-fignos `
+    # --filter pandoc-eqnos `
+    # --filter pandoc-secnos `
     # --include-before-body=$front `
 
 if ($isOpenDocxAfterComplete) {
