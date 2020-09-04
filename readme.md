@@ -13,7 +13,7 @@
 
 **目前仓库建立不久，各方面还不完善，大部分文件均未完成，不具有太大的指导价值，欢迎watch**
 
-运行`pandoc_make.ps1`即可编译`example.md`生成`example.docx`，但需要pandoc和几个pandoc的插件依赖，可以直接对比已经存在的`example.md`和`example.docx`查看直接转换的效果！
+~~运行`pandoc_make.ps1`即可编译`example.md`生成`example.docx`，但需要pandoc和几个pandoc的插件依赖，可以直接对比已经存在的`example.md`和`example.docx`查看直接转换的效果！~~
 
 **可以直接对比已经存在的`menu.md`和`menu.docx`，以及`/Work/example.md`和`/Work/example.docx`查看直接转换的效果！**
 
@@ -58,7 +58,7 @@
 │   Reference_md.docx                         生成手册使用的模版文件
 │   ThinsToDo.md                              整个流程要处理的事情
 │
-├───Work                                      工作文件夹
+├───Work                                      工作文件夹，各种测试预研
 │
 └───开题答辩                                  开题答辩相关文件，含项目介绍
         项目介绍.md                           为开题答辩准备的项目介绍
@@ -95,7 +95,7 @@
 3. 没听说过LaTeX公式
 4. 对命令行操作半点不懂
 
-那么该方案对你没有任何优势，建议先学习Word自动化排版
+那么该方案对你没有任何优势，建议先学习Word排版
 
 ## 环境搭建（依赖）
 
@@ -117,9 +117,10 @@ TODO
 
 ## 参考文献
 
-- 王树义：[如何用Markdown写论文？](https://www.jianshu.com/p/b0ac7ae98100)
-- pandoc文档：[https://pandoc.org/MANUAL.html](https://pandoc.org/MANUAL.html)
-- pandoc插件作者：[\@tomduck](https://pandoc.org/MANUAL.html)
+* 王树义：[如何用Markdown写论文？](https://www.jianshu.com/p/b0ac7ae98100)
+* pandoc文档：[https://pandoc.org/MANUAL.html](https://pandoc.org/MANUAL.html)
+* pandoc插件作者：[\@tomduck](https://pandoc.org/MANUAL.html)
+* Word ooxml文档：[API 参考 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/overview/openxml/?view=openxml-2.8.1)
 
 ## TODO
 
