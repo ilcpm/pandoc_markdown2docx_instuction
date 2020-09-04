@@ -7,7 +7,7 @@ toc-title: 目录
 
 # 参考文献
 bibliography: [1.bib]
-csl: china-national-standard-gb-t-7714-2015-numeric.csl
+csl: 'china-national-standard-gb-t-7714-2015-numeric.csl'
 nocite: |
     @*
 
