@@ -1,0 +1,89 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{work-order}{%
+\subsubsection{Work Order}\label{work-order}}
+
+\begin{table}[h]
+\begin{tabular}{ccc}
+The Contractor & \hspace{3cm} & The Customer \\
+& & \\
+& & \\
+\hrulefill & \hspace{3cm} & \hrulefill \\
+%
+Name & \hspace{3cm} & Name \\
+& & \\
+& & \\
+\hrulefill & \hspace{3cm} & \hrulefill \\
+
+\end{tabular}
+\end{table}
+\vspace{1cm}
+
++--------------------------------------------\textbar----------\textbar-------------+
+\textbar{} Type of Service \textbar{} Cost \textbar{} Total \textbar{}
++:===========================================+=========:+:===========:+
+\textbar{} Game Engine \textbar{} 70.0 \textbar{} 70.0 \textbar{}
+\textbar{} \textbar{} \textbar{} \textbar{}
++--------------------------------------------\textbar----------\textbar-------------+
+\textbar{} \textbar{} \textbar{} \textbar{}
++--------------------------------------------\textbar----------\textbar-------------+
+\textbar{} Extra: Comply with defined API functions \textbar{} 10.0
+\textbar{} 10.0 \textbar{} \textbar{} and expected returned format
+\textbar{} \textbar{} \textbar{}
++--------------------------------------------\textbar----------\textbar-------------+
+\textbar{} \textbar{} \textbar{} \textbar{}
++--------------------------------------------\textbar----------\textbar-------------+
+\textbar{} \textbf{Total Cost} \textbar{} \textbar{} \textbf{80.0}
+\textbar{}
++--------------------------------------------\textbar----------\textbar-------------+
+
+\end{document}

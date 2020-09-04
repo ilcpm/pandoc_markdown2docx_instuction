@@ -2,6 +2,7 @@
 
 用Word写作论文时，需要不停的调整样式和格式，而插入公式的时候体验也很差。该项目的目的是，基于pandoc工具提供的Markdown转换Word功能，改善Word写作论文的体验。**以重庆大学毕业论文排版作为例子**，试图给出用Markdown写作Word论文的指导方案，并处理该过程中因为Word排版要求复杂带来的各种问题。
 
+
 大致思路为：
 
 1. 用Markdown实现绝大部分的“后端”写作（即论文输入），提升写作体验
@@ -22,6 +23,23 @@
 **可以直接对比已经存在的`example.md`和`example.docx`查看直接转换的效果！**
 
 **可以直接对比已经存在的`example.md`和`example.docx`查看直接转换的效果！**
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [基于pandoc的`markdown写作Word论文`转换方案](#基于pandoc的markdown写作word论文转换方案)
+  - [缘起](#缘起)
+  - [优势&局限性](#优势局限性)
+    - [优势](#优势)
+    - [局限性](#局限性)
+  - [我适合使用吗](#我适合使用吗)
+  - [环境搭建（依赖）](#环境搭建依赖)
+    - [必备的转换工具](#必备的转换工具)
+    - [建议的写作环境](#建议的写作环境)
+  - [TODO](#todo)
+
+<!-- /code_chunk_output -->
 
 ## 缘起
 
