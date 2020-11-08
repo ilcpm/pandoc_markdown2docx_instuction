@@ -31,6 +31,7 @@
   - [环境搭建（依赖）](#环境搭建依赖)
     - [必备的转换工具](#必备的转换工具)
     - [建议的写作环境](#建议的写作环境)
+  - [工作流时间表](#工作流时间表)
   - [参考文献](#参考文献)
   - [TODO](#todo)
 
@@ -42,7 +43,7 @@
 
 另一方面个人对markdown甚是喜欢，也希望能够让markdown完成写论文的“出圈”之路，遂展开研究。
 
-该项目同时申请了2020年重庆市的市级创新实践项目，具体事实期限约为2020年6月~2021年6月
+该项目同时申请了2020年重庆市的市级创新实践项目，具体实施期限约为2020年6月~2021年6月
 
 详细项目介绍见[项目介绍.md](开题答辩/项目介绍.md)
 
@@ -56,15 +57,16 @@
 │   readme.md                                 Readme
 │   reference2.docx                           测试用的Word模版文件
 │   Reference_md.docx                         生成手册使用的模版文件
-│   ThinsToDo.md                              整个流程要处理的事情
 │
-├───Work                                      工作文件夹，各种测试预研
+├───Work                                      工作汇总文件夹，合并研究成功，目前为草稿
+│
+├───功能验证                                  工作文件夹，各种测试预研
+│       ThinsToDo.md                          整个流程要处理的事情
+│       ooxml.md                              转换为Word所需的Word ooxml代码
 │
 └───开题答辩                                  开题答辩相关文件，含项目介绍
         项目介绍.md                           为开题答辩准备的项目介绍
-        ooxml.md                              转换为Word所需的Word ooxml代码
 ```
-
 
 ## 优势&局限性
 
@@ -115,11 +117,20 @@ TODO
 
 TODO
 
+## 工作流时间表
+
+* 2020年11月底，通过直接在Markdown中插入ooxml代码的方式实现对交叉引用，公式编号等内容的实现，即实现“所有功能手动实现，只需要编程把这个过程自动化即可”的目标，完成中期答辩
+* 2021年1至2月寒假，编程工作预研，学习python库和项目的编写，阅读lua-filter代码，研究pandoc`类`
+* 2021年1至2月寒假，主要的编程工作，编写python插件库，实现自动化
+* 2021年2至6月，完成各种测试，完善功能，修复bug，在17级毕业时寻找志愿者利用该方案排版Word论文，寻找问题并进行调试
+* 2021年2至6月，逐步完成文档撰写
+
 ## 参考文献
 
 * 王树义：[如何用Markdown写论文？](https://www.jianshu.com/p/b0ac7ae98100)
 * pandoc文档：[https://pandoc.org/MANUAL.html](https://pandoc.org/MANUAL.html)
-* pandoc插件作者：[\@tomduck](https://pandoc.org/MANUAL.html)
+* pandoc插件作者：[\@tomduck](https://github.com/tomduck?tab=repositories)
+* pandoc-lua-filter：[pandocker-lua-filters](https://github.com/pandocker/pandocker-lua-filters)
 * Word ooxml文档：[API 参考 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/overview/openxml/?view=openxml-2.8.1)
 
 ## TODO
