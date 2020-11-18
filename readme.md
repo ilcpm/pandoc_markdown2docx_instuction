@@ -17,6 +17,8 @@
 
 **可以直接对比已经存在的`menu.md`和`menu.docx`，以及`/Work/example.md`和`/Work/example.docx`查看直接转换的效果！**
 
+**2020.11.19，手动实现了对公式编号和引用的原生实现，对比`/功能验证/test_raw.txt`和`/功能验证/test_raw.docx`查看效果**
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -33,6 +35,7 @@
     - [建议的写作环境](#建议的写作环境)
   - [工作流时间表](#工作流时间表)
   - [参考文献](#参考文献)
+  - [进展](#进展)
   - [TODO](#todo)
 
 <!-- /code_chunk_output -->
@@ -112,8 +115,12 @@ TODO
 
 * VS Code
   * MPE
+    * 设置为pandoc模式
   * pandoc citer
   * markdown写作插件若干
+    * Markdownlint：语法检查
+    * markdown all in one：语法高亮
+    * markdown shortcut：快捷键支持
 
 TODO
 
@@ -129,9 +136,14 @@ TODO
 
 * 王树义：[如何用Markdown写论文？](https://www.jianshu.com/p/b0ac7ae98100)
 * pandoc文档：[https://pandoc.org/MANUAL.html](https://pandoc.org/MANUAL.html)
+* pandoc核心数据结构：[pandoc filter](https://pandoc.org/filters.html)
 * pandoc插件作者：[\@tomduck](https://github.com/tomduck?tab=repositories)
 * pandoc-lua-filter：[pandocker-lua-filters](https://github.com/pandocker/pandocker-lua-filters)
 * Word ooxml文档：[API 参考 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/overview/openxml/?view=openxml-2.8.1)
+
+## 进展
+
+* 2020.11.19：解构了pandoc的数据结构，通过直接修改`native`代码完成了对**公式编号**和**交叉引用**的原生实现，只需要编程实现即可
 
 ## TODO
 
