@@ -15,6 +15,9 @@
     - [书签结束](#书签结束)
     - [书签引用域代码](#书签引用域代码)
   - [自定义样式](#自定义样式)
+    - [自定义段落样式](#自定义段落样式)
+    - [自定义文本样式](#自定义文本样式)
+    - [样式嵌套](#样式嵌套)
 
 ## 分节符
 
@@ -197,7 +200,37 @@
 
 ## 自定义样式
 
+### 自定义段落样式
+
+（这里前面的`|`用来表示一行）
+
+```html
 ::: {custom-style="Poetry"}
 | A Bird came down the Walk---
 | He did not know I saw---
 :::
+```
+
+### 自定义文本样式
+
+```html
+[Get out]{custom-style="Emphatically"}, he said.
+```
+
+给`Get out`字符串应用自定义文本样式`Emphatically`
+
+### 样式嵌套
+
+```html
+::: {custom-style="Body Text"}
+This is text with an [emphasized]{custom-style="Emphatic"} text style.
+And this is text with a [strengthened]{custom-style="Strengthened"}
+text style.
+:::
+```
+
+```html
+::: {custom-style="My Block Style"}
+> Here is a styled paragraph that inherits from Block Text.
+:::
+```

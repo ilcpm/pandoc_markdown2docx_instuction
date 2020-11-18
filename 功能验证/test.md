@@ -34,3 +34,25 @@
 \newpage
 
 123456
+
+[Get out]{custom-style="Emphatically"}, he said.
+
+::: {custom-style="First Paragraph"}
+This is some text.
+:::
+
+::: {custom-style="Body Text"}
+This is text with an [emphasized]{custom-style="Emphatic"} text style.
+And this is text with a [strengthened]{custom-style="Strengthened"}
+text style.
+:::
+
+::: {custom-style="My Block Style"}
+> Here is a styled paragraph that inherits from Block Text.
+:::
+
+::: {custom-style="Poetry"}
+A Bird came down the Walk---
+
+He did not know I saw---
+:::
