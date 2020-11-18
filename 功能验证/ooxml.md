@@ -22,6 +22,7 @@ code block语法：
     - [自定义段落样式](#自定义段落样式)
     - [自定义文本样式](#自定义文本样式)
     - [样式嵌套](#样式嵌套)
+  - [参考文献位置](#参考文献位置)
 
 ## 分节符
 
@@ -41,7 +42,7 @@ code block语法：
 
 单独成段
 
-```{xml}
+```xml
 <w:p>
   <w:r>
     <w:br w:type="page"/>
@@ -225,6 +226,8 @@ code block语法：
 
 ### 样式嵌套
 
+同时应用段落样式和文本样式
+
 ```html
 ::: {custom-style="Body Text"}
 This is text with an [emphasized]{custom-style="Emphatic"} text style.
@@ -236,5 +239,14 @@ text style.
 ```html
 ::: {custom-style="My Block Style"}
 > Here is a styled paragraph that inherits from Block Text.
+:::
+```
+
+## 参考文献位置
+
+在任意位置插入参考文献
+
+```html
+::: {#refs}
 :::
 ```
