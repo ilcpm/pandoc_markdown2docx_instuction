@@ -251,7 +251,7 @@ text style.
 
 ## 参考文献位置
 
-在任意位置插入参考文献
+在任意位置插入参考文献，from 郭俊余[pandoc手册citations placement-of-the-bibliography](https://www.pandoc.org/MANUAL.html#placement-of-the-bibliography)
 
 ```html
 ::: {#refs}
