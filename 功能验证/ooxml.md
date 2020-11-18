@@ -1,5 +1,9 @@
 # OOXML代码&特殊语法
 
+code block语法：
+
+> `{=openxml}`
+
 - [OOXML代码&特殊语法](#ooxml代码特殊语法)
   - [分节符](#分节符)
   - [分页符](#分页符)
@@ -23,7 +27,7 @@
 
 单独成段
 
-```{=openxml}
+```xml
 <w:p/>
 <w:p>
     <w:pPr>
@@ -37,7 +41,7 @@
 
 单独成段
 
-```{=openxml}
+```{xml}
 <w:p>
   <w:r>
     <w:br w:type="page"/>
@@ -49,7 +53,7 @@
 
 插入在`<w:p>  </w:p>`标签内
 
-```{=openxml}
+```xml
 <w:r>
     <w:tab/>
 </w:r>
@@ -61,7 +65,7 @@
 
 * 左
 
-  ```{=openxml}
+  ```xml
   <w:r>
       <w:ptab w:relativeTo="margin" w:alignment="left" w:leader="none"/>
   </w:r>
@@ -69,7 +73,7 @@
 
 * 中
 
-  ```{=openxml}
+  ```xml
   <w:r>
       <w:ptab w:relativeTo="margin" w:alignment="center" w:leader="none"/>
   </w:r>
@@ -77,7 +81,7 @@
 
 * 右
 
-  ```{=openxml}
+  ```xml
   <w:r>
       <w:ptab w:relativeTo="margin" w:alignment="right" w:leader="none"/>
   </w:r>
@@ -87,7 +91,7 @@
 
 ### 去掉该部分拼写检查
 
-```
+```xml
 <w:rPr>
     <w:noProof/>
 </w:rPr>
@@ -95,7 +99,7 @@
 
 ### 复杂域代码
 
-```{=openxml}
+```xml
 <w:p>
     <w:r>
         <w:fldChar w:fldCharType="begin"/>
@@ -111,7 +115,7 @@
 
 ### 简单域代码
 
-```
+```xml
 <w:fldSimple w:instr=" STYLEREF 1 \s ">
     <w:r>
         <w:rPr>
@@ -122,7 +126,7 @@
 </w:fldSimple>
 ```
 
-```
+```xml
 <w:fldSimple w:instr=" SEQ Figure \* ARABIC \s 1 ">
     <w:r>
         <w:rPr>
@@ -137,7 +141,7 @@
 
 章节-编号
 
-```
+```xml
 <w:p>
     <w:pPr>
         <w:pStyle w:val="aa"/>
@@ -174,27 +178,27 @@
 
 ### 书签开始
 
-```{=openxml}
+```xml
 <w:bookmarkStart w:id="20" w:name="name" />
 ```
 
 ### 书签结束
 
-```{=openxml}
+```xml
 <w:bookmarkEnd w:id="20" />
 ```
 
 ### 书签引用域代码
 
-* 引用文本
+* 引用文本内容
 
-  ```{=openxml}
+  ```code
   REF name \h 
   ```
 
 * 引用页码
 
-  ```{=openxml}
+  ```code
   PAGEREF name \h
   ```
 
