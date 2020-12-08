@@ -22,6 +22,7 @@ pandoc有`RawInline`和`RawBlock`两种原生“语法”，格式为`{=openxml}
     - [自定义文本样式](#自定义文本样式)
     - [样式嵌套](#样式嵌套)
   - [参考文献位置](#参考文献位置)
+  - [标题编号](#标题编号)
 
 ## 分节符
 
@@ -256,4 +257,21 @@ text style.
 ```html
 ::: {#refs}
 :::
+```
+
+## 标题编号
+
+把四级标题变成带圈数字`numbering.xml`
+
+```xml
+        <w:lvl w:ilvl="3">
+            <w:start w:val="1"/>
+            <w:numFmt w:val="decimalEnclosedCircleChinese"/>
+            <w:pStyle w:val="4"/>
+            <w:lvlText w:val="%4"/>
+            <w:lvlJc w:val="left"/>
+            <w:pPr>
+                <w:ind w:left="0" w:firstLine="0"/>
+            </w:pPr>
+        </w:lvl>
 ```
