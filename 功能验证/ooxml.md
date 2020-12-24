@@ -11,6 +11,7 @@ pandoc有`RawInline`和`RawBlock`两种原生“语法”，格式为`{=openxml}
   - [域代码插入](#域代码插入)
     - [去掉该部分拼写检查](#去掉该部分拼写检查)
     - [复杂域代码](#复杂域代码)
+    - [域代码嵌套](#域代码嵌套)
     - [简单域代码](#简单域代码)
     - [题注域代码](#题注域代码)
   - [书签](#书签)
@@ -120,6 +121,34 @@ pandoc有`RawInline`和`RawBlock`两种原生“语法”，格式为`{=openxml}
         <w:fldChar w:fldCharType="end"/>
     </w:r>
 </w:p>
+```
+
+### 域代码嵌套
+
+以`书签名字`所指向的文本为基础，指向其编号。例如，用`书签名字`标记某标题，因为pandoc会自动以标题的名字生成标题指向的内容，所以就可以用域代码嵌套实现对标题编号的引用了
+
+```xml
+<w:r>
+    <w:fldChar w:fldCharType="begin"/>
+</w:r>
+<w:r>
+    <w:instrText xml:space="preserve"> REF </w:instrText>
+</w:r>
+<w:r>
+    <w:fldChar w:fldCharType="begin"/>
+</w:r>
+<w:r>
+    <w:instrText xml:space="preserve"> REF 书签名字 \h </w:instrText>
+</w:r>
+<w:r>
+    <w:fldChar w:fldCharType="end"/>
+</w:r>
+<w:r>
+    <w:instrText xml:space="preserve"> \r \h </w:instrText>
+</w:r>
+<w:r>
+    <w:fldChar w:fldCharType="end"/>
+</w:r>
 ```
 
 ### 简单域代码
