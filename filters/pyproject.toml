@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "docx_filters"
+version = "0.1.0"
+description = ""
+authors = ["Hagb Green <hagb_green@qq.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+panflute = ">=2.0"
+
+[tool.poetry.scripts]
+docx_filters = 'docx_filters:main'
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
