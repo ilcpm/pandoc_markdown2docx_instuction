@@ -5,7 +5,7 @@ description = ""
 authors = ["Hagb Green <hagb_green@qq.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 panflute = ">=2.0"
 
 [tool.poetry.scripts]
