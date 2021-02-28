@@ -20,10 +20,11 @@ class FigCaptionReplace():
 
     def action(self, elem, doc):
         if isinstance(elem, pf.Image):
-            # pf.debug("Image!")
             elem: pf.Image
-            cap2_begin = False
-            cap2 = []
+            # pf.debug("Image!")
+
+            if elem.title == "":
+                return elem
 
             if '-' in elem.classes or 'unnumbered' in elem.classes:
                 new_content = []
@@ -57,7 +58,8 @@ class FigCaptionReplace():
                 else:
                     new_content[-1].content.append(elem1)
             elem.content = new_content
-        return elem
+
+            return elem
 
     def __init__(self):
         pass
