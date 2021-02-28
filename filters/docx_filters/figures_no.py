@@ -19,10 +19,20 @@ class FigCaptionReplace():
     anchor_re = re.compile(r'{#([^}]+)}')
 
     def action(self, elem, doc):
+
+        # 若单独成段的图片没有题注，则对该段落应用Figure样式
+        if isinstance(elem, pf.Para):
+            if len(elem.content) == 1:
+                if isinstance(elem.content[0], pf.Image):
+                    if elem.content[0].title == "":
+                        return pf.Div(elem, attributes={'custom-style': 'Figure'})
+
+
         if isinstance(elem, pf.Image):
             elem: pf.Image
             # pf.debug("Image!")
 
+            # 若图片无题注，则直接返回图片，不做处理
             if elem.title == "":
                 return elem
 
