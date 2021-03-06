@@ -122,30 +122,19 @@ def toc(title=index_str):
 
 null_para = pf.Para(pf.Span())
 fun_commands = {
-    'refs':
-    lambda x: pf.RawInline(f'<w:fldSimple w:instr=" REF {x} \\h "/>',
-                           format="openxml"),
-    'KeyWord':
-    lambda x: [
-        null_para,
-        pf.Para(
-            pf.Span(pf.Str("关键词："), attributes={'custom-style': 'Key Word'}),
-            pf.Str(x))
-    ],
-    'KeyWord2':
-    lambda x: [
-        null_para,
-        pf.Para(
-            pf.Span(pf.Str("Keywords: "),
-                    attributes={'custom-style': 'Key Word'}), pf.Str(x))
-    ],
-    'newPara':
-    lambda x="1": [null_para] * (1 if x == "" else int(x)),
-    'Reference':
-    lambda x: pf.Div(identifier='refs'),
-    'toc':
-    toc
+    'refs': lambda x: pf.RawInline(f'<w:fldSimple w:instr=" REF {x} \\h "/>', format="openxml"),
+    'KeyWord': lambda x: pf.Span(pf.Str(x), attributes={'custom-style': 'Key Word'}),
+    'newPara': lambda x="1": [null_para] * (1 if x == "" else int(x)),
+    'Reference': lambda x: pf.Div(identifier='refs'),
+    'toc': toc
 }
+    # 'KeyWord2':
+    # lambda x: [
+    #     null_para,
+    #     pf.Para(
+    #         pf.Span(pf.Str("Keywords: "),
+    #                 attributes={'custom-style': 'Key Word'}), pf.Str(x))
+    # ],
 
 
 def newSection(fmt: str = "", start: str = ""):
