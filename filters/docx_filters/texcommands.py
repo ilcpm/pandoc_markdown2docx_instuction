@@ -126,7 +126,8 @@ fun_commands = {
     'KeyWord': lambda x: pf.Span(pf.Str(x), attributes={'custom-style': 'Key Word'}),
     'newPara': lambda x="1": [null_para] * (1 if x == "" else int(x)),
     'Reference': lambda x: pf.Div(identifier='refs'),
-    'toc': toc
+    'toc': toc,
+    'Style': lambda x: pf.RawInline(f'''<w:pPr><w:pStyle w:val="{x}"/></w:pPr>''', format='openxml')
 }
     # 'KeyWord2':
     # lambda x: [

@@ -248,6 +248,12 @@ pandoc有`RawInline`和`RawBlock`两种原生“语法”，格式为`{=openxml}
 
 （这里前面的`|`用来表示一行）
 
+```xml
+<w:pPr>
+    <w:pStyle w:val="xxx样式名"/>
+</w:pPr>
+```
+
 ```html
 ::: {custom-style="Poetry"}
 | A Bird came down the Walk---
