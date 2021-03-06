@@ -2,7 +2,7 @@
 name = "docx_filters"
 version = "0.1.4"
 description = ""
-authors = ["Hagb Green <hagb_green@qq.com>"]
+authors = ["Hagb Green <hagb_green@qq.com>", "ilcpm <ilcpm@outlook.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
