@@ -1,5 +1,4 @@
 import panflute as pf
-import copy
 import re
 top_level = 1
 
@@ -21,12 +20,12 @@ class FigCaptionReplace():
     def action(self, elem, doc):
 
         # 若单独成段的图片没有题注，则对该段落应用Figure样式
+        # 注：若采用\Style{xxx} ![]()的方式对单独成段的图片应用样式，该段代码则不会生效，故无需单独处理
         if isinstance(elem, pf.Para):
             if len(elem.content) == 1:
                 if isinstance(elem.content[0], pf.Image):
                     if elem.content[0].title == "":
                         return pf.Div(elem, attributes={'custom-style': 'Figure'})
-
 
         if isinstance(elem, pf.Image):
             elem: pf.Image
@@ -52,21 +51,24 @@ class FigCaptionReplace():
                         '-zh' if elem.identifier else ""))
 
             for elem1 in elem.content:
-                if isinstance(
-                        elem1, pf.RawInline
-                ) and elem1.format == 'tex' and elem1.text == r'\Caption2{fig}':
-                    new_content.append(pf.LineBreak)
-                    if not ('-' in elem.classes
-                            or 'unnumbered' in elem.classes):
-                        new_content.extend(
-                            (pf.Str('Fig.'), pf.Space, section_no, pf.Str('.'),
-                             figure_no2, pf.Space))
-                    new_content.append(
-                        pf.Span(identifier=elem.identifier +
-                                '-en' if elem.identifier else ""))
-                    cap2_begin = True
-                else:
-                    new_content[-1].content.append(elem1)
+                if not isinstance(elem1, pf.RawInline):
+                    break
+                if not elem1.format == 'tex':
+                    break
+                if not elem1.text == r'\Caption2{fig}':
+                    break
+                new_content.append(pf.LineBreak)
+                if not ('-' in elem.classes
+                        or 'unnumbered' in elem.classes):
+                    new_content.extend(
+                        (pf.Str('Fig.'), pf.Space, section_no, pf.Str('.'),
+                            figure_no2, pf.Space))
+                new_content.append(
+                    pf.Span(identifier=elem.identifier +
+                            '-en' if elem.identifier else ""))
+                cap2_begin = True
+            else:
+                new_content[-1].content.append(elem1)
             elem.content = new_content
 
             return elem
