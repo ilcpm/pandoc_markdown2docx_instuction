@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "docx_filters"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["Hagb Green <hagb_green@qq.com>", "ilcpm <ilcpm@outlook.com>"]
 
