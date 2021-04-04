@@ -4,7 +4,8 @@ from . import figures_no
 from . import header_convert
 from . import refs
 from . import section_break
-from . import texcommands
+from . import word_elements
+from . import parse_md
 from . import fieldCode
 import sys
 import panflute as pf
@@ -18,7 +19,7 @@ def main(doc=None):
         from_exec = True
     else:
         from_exec = False
-    for mod in (fieldCode, header_convert, equations_no, figures_no, refs, texcommands):
+    for mod in (parse_md, fieldCode, header_convert, equations_no, figures_no, refs, word_elements):
         doc = mod.main(doc=doc)
     if from_exec:
         pf.dump(doc)
