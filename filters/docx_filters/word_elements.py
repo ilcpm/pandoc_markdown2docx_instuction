@@ -30,7 +30,7 @@ block_const_commands = {
 }
 
 
-def toc(title='', format=r'TOC \o "1-3" \h \z \u', docinfo=None):
+def tocRaw(title='', format=r'TOC \o "1-3" \h \z \u', docinfo=None):
     TOC = pf.RawBlock(
         r'<w:sdt><w:sdtPr><w:docPartObj><w:docPartGallery w:val="Table of Contents"/><w:docPartUnique/></w:docPartObj></w:sdtPr><w:sdtContent><w:p><w:r><w:fldChar w:fldCharType="begin" w:dirty="true"/><w:instrText xml:space="preserve">'
         + format
@@ -57,7 +57,7 @@ inline_function_commands = {
 
 block_function_commands = {
     'newPara': lambda x="1", docinfo=None: [null_para] * (1 if x == "" else int(x)),
-    'toc': toc,
+    'tocRaw': tocRaw,
     'newSection': newSection
 }
 
