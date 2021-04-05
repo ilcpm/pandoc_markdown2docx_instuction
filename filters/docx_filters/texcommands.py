@@ -19,10 +19,13 @@ class ConstTexCommandReplace():
     def action(self, elem, doc: pf.Doc):
         docinfo = [elem, doc]
         if isinstance(elem, pf.RawBlock):
-            if new_elem := self._parse_tex(elem.text, self.block_const_commands, self.block_function_commands, docinfo):
+            new_elem = self._parse_tex(elem.text, self.block_const_commands, self.block_function_commands, docinfo)
+            if new_elem:
                 return new_elem
-            elif new_elem := self._parse_tex(elem.text, self.inline_const_commands, self.inline_function_commands, docinfo):
-                return pf.Para(new_elem)
+            else:
+                new_elem = self._parse_tex(elem.text, self.inline_const_commands, self.inline_function_commands, docinfo)
+                if new_elem:
+                    return pf.Para(new_elem)
         elif isinstance(elem, pf.RawInline):
             return self._parse_tex(elem.text, self.inline_const_commands, self.inline_function_commands, docinfo)
 
