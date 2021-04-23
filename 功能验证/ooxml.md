@@ -25,6 +25,7 @@ pandoc有`RawInline`和`RawBlock`两种原生“语法”，格式为`{=openxml}
   - [参考文献位置](#参考文献位置)
   - [标题编号](#标题编号)
   - [标题取消编号](#标题取消编号)
+  - [去掉首行缩进](#去掉首行缩进)
 
 ## 分节符
 
@@ -320,5 +321,13 @@ text style.
     <w:numPr>
         <w:numId w:val="0"/>
     </w:numPr>
+</w:pPr>
+```
+
+## 去掉首行缩进
+
+```xml
+<w:pPr>
+    <w:ind w:firstLineChars="0" w:firstLine="0"/>
 </w:pPr>
 ```
