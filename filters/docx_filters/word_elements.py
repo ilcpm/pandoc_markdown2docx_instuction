@@ -1,7 +1,6 @@
 from . import texcommands
 import panflute as pf
 import sys
-index_str = "目录"
 
 inline_const_commands = {
     r'newLine':
@@ -51,6 +50,7 @@ null_para = pf.Para(pf.Span())
 
 
 inline_function_commands = {
+    'Space': lambda x, docinfo=None: [pf.Space()] * (1 if x == "" else int(x)),
     'KeyWord': lambda x, docinfo=None: pf.Span(pf.Str(x), attributes={'custom-style': 'Key Word'}),
     'refs': lambda x, docinfo=None: pf.RawInline(f'<w:fldSimple w:instr=" REF {x} \\h "/>', format="openxml"),
     'Style': lambda x, docinfo=None: pf.RawInline(f'''<w:pPr><w:pStyle w:val="{x}"/></w:pPr>''', format='openxml')}
