@@ -60,14 +60,17 @@ class MathReplace():
             content_group.append([is_math, [elem1]])
         elem_old = elem
         elem = []
+        first_para = True
         for elem_group in content_group:
             if not elem_group[0]:
+                if not first_para:
+                    elem_group[1] = [pf.RawInline('<w:pPr><w:ind w:firstLineChars="0" w:firstLine="0"/></w:pPr>', format="openxml"),
+                     *elem_group[1]]
                 elem_new = pf.Para(*elem_group[1])
-                elem_new.attributes = elem_old.attributes
-                elem_new.classes = elem_old.classes
-                elem_new.identifier = elem_old.identifier
                 elem.append(elem_new)
+                first_para = False
                 continue
+            first_para = False
             rows = []
             for math_elem in elem_group[1]:
                 if isinstance(math_elem, pf.Math):
