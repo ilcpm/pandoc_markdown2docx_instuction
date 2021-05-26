@@ -26,6 +26,7 @@ pandoc有`RawInline`和`RawBlock`两种原生“语法”，格式为`{=openxml}
   - [标题编号](#标题编号)
   - [标题取消编号](#标题取消编号)
   - [去掉首行缩进](#去掉首行缩进)
+  - [合并两行的特殊回车](#合并两行的特殊回车)
 
 ## 分节符
 
@@ -329,5 +330,18 @@ text style.
 ```xml
 <w:pPr>
     <w:ind w:firstLineChars="0" w:firstLine="0"/>
+</w:pPr>
+```
+
+## 合并两行的特殊回车
+
+Word中，`Ctrl` + `Alt` + `Enter`可以产生一个特殊的回车把当前段落的后一个段落合并到当前段落的后方，本质上还是一个当前段落中的特殊段落属性标签。
+
+```xml
+<w:pPr>
+    <w:rPr>
+        <w:vanish/>
+        <w:specVanish/>
+    </w:rPr>
 </w:pPr>
 ```
